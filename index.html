@@ -1,0 +1,46 @@
+<html>
+<title >Amazon Cellphone Sentimental Review Analysis</title>
+<head>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style/index12.css') }}">
+<style>
+body {
+background: #acb6e5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #86fde8, #acb6e5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #86fde8, #acb6e5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+</style>
+</head>
+<body  class="body1"> 
+<form  method="POST">
+  <div class="container">
+    <h1 align = 'center' style="color:black; font-size:30px" >Amazon Cellphone Sentiment Analysis</h1>
+
+    <p align = 'center'style="font-size:25px">Type your Review here</p>
+    <form action='/tpredict' method="post">
+	<p align = "center">
+	<input type="text"  align = "Center" placeholder="Enter the review" name="tweet" id="rcorners1" required>
+	</p>
+	<table align='center' style='padding:0.5px; border-spacing: 10px; font-size:20 px'>	
+	<tr>
+	<td colspan="2" align="center" ><button class="button5" type="submit" name="predict" align='center' value="Predict" onclick="window.location.href = 'D:\ArtificiaI Intelligence with Flask\Amazon phone review Main\New\templates\index.html'" ><font size="4">Predict</font></button></td>
+	</tr>
+	<tr>
+	<td colspan="2" align = "center"><b>{{ypre}}</b></td>
+	</tr>
+	</table>
+	</form>
+     <!--<img src="/static/happy.png" alt="Positive" class="tab3">-->
+	<p>
+	{% if ypre == "Positive Review" %}
+	<p>Positive</p>
+    {% else %}
+    {% if ypre == "Negative Review" %}
+    
+    {% endif %}
+    {% endif %}
+	</p>
+    
+  </div>
+
+</form>
